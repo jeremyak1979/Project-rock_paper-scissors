@@ -1,2 +1,2 @@
-# Project-rock_paper-scissors
+# Project-rock_paper_scissors
 https://www.theodinproject.com/lessons/foundations-rock-paper-scissors
