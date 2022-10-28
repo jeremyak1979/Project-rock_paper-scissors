@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //rock paper scissors game.
+        function getComputerChoice() {
+            return Math.floor(Math.random() * 3);
+        }
+
+        let computerChoice = getComputerChoice();
+        console.log(computerChoice);
+
+        if (computerChoice === 0) {
+            console.log('rock');
+        } else if (computerChoice === 1) {
+            console.log('paper');
+        } else {
+            console.log('scissors');
+        }
+
+        let playerSelection = prompt('Rock, Paper, Scissors, GO!', 'rock');
+        let playerAnswer = playerSelection.toLowerCase();
+        console.log(playerAnswer);
+
+        if (playerAnswer === 'rock' && computerChoice === 0) {
+            console.log('rock versus rock, rock wins!');
+        } else if (playerAnswer === 'rock' && computerChoice === 1) {
+            console.log('rock vs paper, paper covers rock, you lose!');
+        } else if (playerAnswer === 'rock' && computerChoice === 2) {
+            console.log('rock vs scissors, rock smashes scissors, you win!');
+        } else if (playerAnswer === 'paper' && computerChoice === 0) {
+            console.log('paper vs rock, paper covers rock, you win!');
+        } else if (playerAnswer === 'paper' && computerChoice === 1) {
+            console.log(paper vs paper, paper wins!);
+        } else if (playerAnswer === 'paper' && computerChoice === 2) {
+            console.log('paper vs scissors, scissors cut paper, you lose!');
+        } else if (playerAnswer === 'scissors' && computerChoice === 0) {
+            console.log('scissors vs rock, rock smashes scissors, you lose!');
+        } else if (playerAnswer === 'scissors' && computerChoice === 1) {
+            console.log('scissors vs paper, scissors cut paper, you win!');
+        } else {
+            console.log('scissors vs scissors, scissors win!');
+        }
+
+    </script>
+    
+</body>
+</html>
