@@ -16,19 +16,19 @@
         }
 
         let computerChoice = getComputerChoice();
-        console.log(computerChoice);
+        //console.log(computerChoice);
 
-        if (computerChoice === 0) {
-            console.log('rock');
-        } else if (computerChoice === 1) {
-            console.log('paper');
-        } else {
-            console.log('scissors');
-        }
+        //if (computerChoice === 0) {
+            //console.log('rock');
+        //} else if (computerChoice === 1) {
+            //console.log('paper');
+        //} else {
+           // console.log('scissors');
+        //}
 
         let playerSelection = prompt('Rock, Paper, Scissors, GO!', 'rock');
         let playerAnswer = playerSelection.toLowerCase();
-        console.log(playerAnswer);
+        //console.log(playerAnswer);
 
         if (playerAnswer === 'rock' && computerChoice === 0) {
             console.log('rock versus rock, rock wins!');
@@ -39,7 +39,7 @@
         } else if (playerAnswer === 'paper' && computerChoice === 0) {
             console.log('paper vs rock, paper covers rock, you win!');
         } else if (playerAnswer === 'paper' && computerChoice === 1) {
-            console.log(paper vs paper, paper wins!);
+            console.log('paper vs paper, paper wins!');
         } else if (playerAnswer === 'paper' && computerChoice === 2) {
             console.log('paper vs scissors, scissors cut paper, you lose!');
         } else if (playerAnswer === 'scissors' && computerChoice === 0) {
