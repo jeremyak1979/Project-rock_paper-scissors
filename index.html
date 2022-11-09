@@ -22,41 +22,45 @@ function getComputerChoice() {
 //let playerSelection = playerPrompt()
 
 //console.log(computerSelection);
-let result = '';
-let score = '';
+let computerScore = 0;
+let playerScore = 0;
 
 function playRound() {
     let playerPrompt = prompt('Select', 'rock');
     let playerSelection = playerPrompt.toLowerCase();
     let computerSelection = getComputerChoice();
-    score += result;
-    
-  
+     
   if (playerSelection == 'rock') {
       if (computerSelection == 'rock') {
         result = 'Tie' + ' ';
         return result;
     } else if (computerSelection == 'paper') {
-        result = ('Computer Wins, ' + computerSelection + ' beats ' + playerSelection + ' ');
-        return result;
+        result = ('Computer Wins, ' + computerSelection + ' beats ' + playerSelection);
+        computerScore += 1
+        return result;       
     } else {
-        result = ('Player Wins, ' + playerSelection + ' beats ' +  computerSelection + ' ');
+        result = ('Player Wins, ' + playerSelection + ' beats ' +  computerSelection);
+        playerScore += 1
         return result;
     }
     
   } else if (playerSelection == 'paper') {
       if (computerSelection == 'rock') {
+        playerScore += 1
         return ('Player Wins, ' + playerSelection + ' beats ' +  computerSelection);
     } else if (computerSelection == 'paper') {
         return 'Tie';
     } else {
+        computerScore += 1
         return ('Computer Wins, ' + computerSelection + ' beats ' + playerSelection);
     }
     
   } else if (playerSelection == 'scissors') {
       if (computerSelection == 'rock') {
+        computerScore += 1
         return ('Computer Wins, ' + computerSelection + ' beats ' + playerSelection);
     } else if (computerSelection == 'paper') {
+        playerScore += 1
         return ('Player Wins, ' + playerSelection + ' beats ' +  computerSelection);
     } else {
         return 'Tie';
@@ -70,9 +74,17 @@ function game() {
    for (let i = 0; i < 5; i++) {
      playRound();
      console.log(result);
-     result += result;     
+          
     }
-
+    let score = 'Player Score ' + '  ' + playerScore + '\n' + 'Computer Score ' + computerScore
+    console.log(score);
+    if (playerScore > computerScore) {
+        console.log('Player Wins!')
+    } else if (computerScore > playerScore) {
+        console.log('Computer Wins! Better luck next time!')
+    } else {
+        console.log('Tie Game. Try again!')
+    }
 }
 
     </script>
