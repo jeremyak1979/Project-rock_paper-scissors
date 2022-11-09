@@ -19,22 +19,24 @@ function getComputerChoice() {
 
 let computerScore = 0;
 let playerScore = 0;
+let result = '';
+
 
 function playRound() {
-    let playerPrompt = prompt('Select', 'paper');
-    let playerSelection = playerPrompt.toLowerCase();
-    let computerSelection = getComputerChoice();
-     
+let playerPrompt = prompt('Select', 'rock');
+let playerSelection = playerPrompt.toLowerCase();
+let computerSelection = getComputerChoice();
+       
   if (playerSelection == 'rock') {
       if (computerSelection == 'rock') {
-        result = 'Tie' + ' ';
+        result = 'Tie';       
         return result;
-    } else if (computerSelection == 'paper') {
-        result = ('Computer Wins, ' + computerSelection + ' beats ' + playerSelection);
+    } else if (computerSelection == 'paper') { 
+        result = 'Computer Wins, ' + computerSelection + ' beats ' + playerSelection;      
         computerScore += 1
         return result;       
-    } else {
-        result = ('Player Wins, ' + playerSelection + ' beats ' +  computerSelection);
+    } else { 
+        result = 'Player Wins, ' + playerSelection + ' beats ' +  computerSelection;      
         playerScore += 1
         return result;
     }
@@ -61,7 +63,7 @@ function playRound() {
     } else if (computerSelection == 'paper') {
         playerScore += 1
         result = ('Player Wins, ' + playerSelection + ' beats ' +  computerSelection);
-        return result;
+        return result; 
     } else {
         result = 'Tie';
         return result;
