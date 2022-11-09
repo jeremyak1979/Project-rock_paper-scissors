@@ -17,16 +17,11 @@ function getComputerChoice() {
   return computerSelectionChoices[Math.floor(Math.random() * computerSelectionChoices.length)];
 } 
 
-
-
-//let playerSelection = playerPrompt()
-
-//console.log(computerSelection);
 let computerScore = 0;
 let playerScore = 0;
 
 function playRound() {
-    let playerPrompt = prompt('Select', 'rock');
+    let playerPrompt = prompt('Select', 'paper');
     let playerSelection = playerPrompt.toLowerCase();
     let computerSelection = getComputerChoice();
      
@@ -47,29 +42,33 @@ function playRound() {
   } else if (playerSelection == 'paper') {
       if (computerSelection == 'rock') {
         playerScore += 1
-        return ('Player Wins, ' + playerSelection + ' beats ' +  computerSelection);
+        result = ('Player Wins, ' + playerSelection + ' beats ' +  computerSelection);
+        return result;
     } else if (computerSelection == 'paper') {
-        return 'Tie';
+        result = 'Tie';
+        return result;
     } else {
         computerScore += 1
-        return ('Computer Wins, ' + computerSelection + ' beats ' + playerSelection);
+        result = ('Computer Wins, ' + computerSelection + ' beats ' + playerSelection);
+        return result;
     }
     
   } else if (playerSelection == 'scissors') {
       if (computerSelection == 'rock') {
         computerScore += 1
-        return ('Computer Wins, ' + computerSelection + ' beats ' + playerSelection);
+        result = ('Computer Wins, ' + computerSelection + ' beats ' + playerSelection);
+        return result;
     } else if (computerSelection == 'paper') {
         playerScore += 1
-        return ('Player Wins, ' + playerSelection + ' beats ' +  computerSelection);
+        result = ('Player Wins, ' + playerSelection + ' beats ' +  computerSelection);
+        return result;
     } else {
-        return 'Tie';
+        result = 'Tie';
+        return result;
     }
   }
 }
-//result += result;
 
-//console.log(playRound(playerSelection, computerSelection));
 function game() {
    for (let i = 0; i < 5; i++) {
      playRound();
