@@ -21,52 +21,57 @@ let computerScore = 0;
 let playerScore = 0;
 let result = '';
 
+function computerWins() {
+    result = 'Computer Wins, ' + computerSelection + ' beats ' + playerSelection;      
+    computerScore += 1
+    return result;
+}
+
+function playerWins() {
+    result = 'Player Wins, ' + playerSelection + ' beats ' +  computerSelection;      
+    playerScore += 1
+    return result;
+}
+
+function tie() {
+    result = 'Tie';       
+    return result;
+}
+
+let computerSelection;
+let playerSelection;
 
 function playRound() {
 let playerPrompt = prompt('Select', 'rock');
-let playerSelection = playerPrompt.toLowerCase();
-let computerSelection = getComputerChoice();
+playerSelection = playerPrompt.toLowerCase();
+computerSelection = getComputerChoice();
+
        
   if (playerSelection == 'rock') {
       if (computerSelection == 'rock') {
-        result = 'Tie';       
-        return result;
+        tie();
     } else if (computerSelection == 'paper') { 
-        result = 'Computer Wins, ' + computerSelection + ' beats ' + playerSelection;      
-        computerScore += 1
-        return result;       
+       computerWins();
     } else { 
-        result = 'Player Wins, ' + playerSelection + ' beats ' +  computerSelection;      
-        playerScore += 1
-        return result;
+        playerWins();
     }
     
   } else if (playerSelection == 'paper') {
       if (computerSelection == 'rock') {
-        playerScore += 1
-        result = ('Player Wins, ' + playerSelection + ' beats ' +  computerSelection);
-        return result;
+        playerWins();
     } else if (computerSelection == 'paper') {
-        result = 'Tie';
-        return result;
+        tie();
     } else {
-        computerScore += 1
-        result = ('Computer Wins, ' + computerSelection + ' beats ' + playerSelection);
-        return result;
+        computerWins();
     }
     
   } else if (playerSelection == 'scissors') {
       if (computerSelection == 'rock') {
-        computerScore += 1
-        result = ('Computer Wins, ' + computerSelection + ' beats ' + playerSelection);
-        return result;
+        computerWins();
     } else if (computerSelection == 'paper') {
-        playerScore += 1
-        result = ('Player Wins, ' + playerSelection + ' beats ' +  computerSelection);
-        return result; 
+        playerWins(); 
     } else {
-        result = 'Tie';
-        return result;
+        tie();
     }
   }
 }
